@@ -9,7 +9,8 @@ const config = {
     storageBucket: "userauth-898cb.appspot.com",
     messagingSenderId: "753276468725",
     appId: "1:753276468725:web:d69c770e9f3716681034bc",
-    measurementId: "G-5ZWYR52QDK"
+    measurementId: "G-5ZWYR52QDK",
+    databaseURL:'https://userauth-898cb.firebaseapp.com'
   };
 
 
@@ -36,7 +37,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
       console.log('error creating user', error.message);
     }
   }
-}
+
+  return userRef;
+};
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
